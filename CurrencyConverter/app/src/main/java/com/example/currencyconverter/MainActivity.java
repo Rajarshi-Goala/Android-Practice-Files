@@ -2,6 +2,7 @@ package com.example.currencyconverter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,9 +33,10 @@ Button euro1, euro2, usd1,usd2, pound1,pound2;
         euro1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Double inrs = Double.parseDouble(editText1.getText().toString());
-                Double ineuro = inrs * 0.012381683;
-               String converted = String.format("%.2f",ineuro);
+                double inrs = Double.parseDouble(editText1.getText().toString());
+                double ineuro;
+                ineuro = inrs * 0.012381683;
+                String converted = String.format("%.2f",ineuro);
                 textView1.setText(converted + " EURO approx");
 
             }
@@ -42,8 +44,8 @@ Button euro1, euro2, usd1,usd2, pound1,pound2;
         usd1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Double inrs = Double.parseDouble(editText1.getText().toString());
-                Double inusd = inrs *0.012611850;
+                double inrs = Double.parseDouble(editText1.getText().toString());
+                double inusd = inrs *0.012611850;
                 String converted = String.format("%.2f",inusd);
                 textView1.setText(converted + " USD approx");
             }
@@ -52,8 +54,8 @@ Button euro1, euro2, usd1,usd2, pound1,pound2;
         pound1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Double inrs = Double.parseDouble(editText1.getText().toString());
-                Double inpound = inrs *0.010484102;
+                double inrs = Double.parseDouble(editText1.getText().toString());
+                double inpound = inrs *0.010484102;
                 String converted = String.format("%.2f",inpound);
                 textView1.setText(converted + " Pounds approx");
             }
@@ -61,8 +63,8 @@ Button euro1, euro2, usd1,usd2, pound1,pound2;
         pound2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Double inpound = Double.parseDouble(editText2.getText().toString());
-                Double inrs = inpound *95.3825111;
+                double inpound = Double.parseDouble(editText2.getText().toString());
+                double inrs = inpound *95.3825111;
                 String converted = String.format("%.2f",inrs);
                 textView2.setText(converted + " Rs approx");
             }
@@ -70,18 +72,19 @@ Button euro1, euro2, usd1,usd2, pound1,pound2;
         euro2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Double ineuro = Double.parseDouble(editText2.getText().toString());
-                Double inrs = ineuro *80.7644599;
+                double ineuro = Double.parseDouble(editText2.getText().toString());
+                double inrs = ineuro *80.7644599;
                 String converted = String.format("%.2f",inrs);
                 textView2.setText(converted + " Rs approx");
             }
         });
 
         usd2.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-                Double usd = Double.parseDouble(editText2.getText().toString());
-                Double inrs = usd *79.290508;
+                double usd = Double.parseDouble(editText2.getText().toString());
+                double inrs = usd *79.290508;
                 String converted = String.format("%.2f",inrs);
                 textView2.setText(converted + " Rs approx");
             }
