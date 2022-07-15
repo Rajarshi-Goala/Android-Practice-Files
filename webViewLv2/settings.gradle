@@ -1,0 +1,2 @@
+rootProject.name = "webViewLv2"
+include ':app'
